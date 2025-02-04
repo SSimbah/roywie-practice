@@ -1,7 +1,9 @@
 import Head from "next/head";
-import Image from "next/image";
 import { Geist, Geist_Mono } from "next/font/google";
 import styles from "@/styles/Home.module.css";
+import UseStateEffectTimer from "@/components/UseStateEffectTimer";
+import UseStateString from "@/components/UseStateString";
+import { Box, Center, Flex, Text } from "@chakra-ui/react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,9 +27,16 @@ export default function Home() {
       <div
         className={`${styles.page} ${geistSans.variable} ${geistMono.variable}`}
       >
-        <main className={styles.main}>
-          
-        </main>
+        <Flex
+          // justifyContent="center"
+          alignItems="center"
+          flexDirection="column"
+        >
+          <Text fontWeight={800}>useStateEffect Timer</Text>  
+          <UseStateEffectTimer/>
+          <Text fontWeight={800}>useState String</Text>  
+          <UseStateString/>
+        </Flex>
       </div>
     </>
   );
